@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 id="h1">My topics</h1>
+
+    <div id="topics-container"></div>
+
+    <button id="add-topic-button" class="add-button">+</button>
+
+    <ul id="sections-list" class="hidden"></ul>
+
+    <button id="add-section-button" class="add-button hidden">+</button>
+
+    <div id="add-form" class="hidden">
+        <span id="close" style="font-size: 30px;">&times;</span>
+        <div id="topic-form" class="hidden">
+            <input type="text" placeholder="Enter topic" id="topic-title">
+            <button id="add-topic-form-button">Add</button>
+        </div>
+
+        <div id="section-form" class="hidden">
+            <input type="text" id="summary-field" placeholder="Enter summary">
+            <textarea id="details-field" placeholder="Enter details"></textarea>
+            <button id="add-section-form-button">Add</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

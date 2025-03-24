@@ -1,0 +1,300 @@
+*{
+    color: white;
+    font-family: Arial;
+}
+
+body{
+    background-color: black;
+    margin: 5%;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+li{
+    margin-bottom: 20px;
+}
+
+details {
+    font-size: 20px;
+    border: 2px solid white;
+    border-radius: 4px;
+    padding: 10px;
+    user-select: none;
+    position: relative;
+    overflow-wrap: anywhere;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+summary {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+details[open] summary {
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    font-size: 30px;
+}
+
+button{
+    cursor: pointer;
+}
+
+#topics-container{
+    display: grid;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+#topics-container div{
+    font-size: 20px;
+    background-color: #6a6a6a;
+    height: 200px;
+    padding: 10px;
+    overflow-wrap: anywhere;
+    overflow: hidden;
+    word-break: break-all;
+    border-radius: 10px;
+    position: relative;
+}
+
+#topics-container div:hover{
+    background-color: gray;
+    outline: 2px solid white;
+    user-select: none;
+}
+
+.add-button{
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: rgb(0, 200, 200);
+    color: white;
+    padding: 5px;
+    font-size: 40px;
+    line-height: 40px;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    cursor: pointer;
+}
+
+.add-button:hover{
+    background-color: rgb(0, 255, 255);   
+}
+
+#add-form{
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.delete-button{
+    border: none;
+    padding: 0;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    background-color: red;
+    border-radius: 5px;
+}
+
+.delete-button:hover{
+    background-color: rgb(255, 50, 50);
+}
+
+.clear{
+    animation-name: delete_animation;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+}
+
+@keyframes delete_animation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        background-color: transparent;
+    }
+}
+
+#close{
+    background-color: transparent;
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 20px;
+    cursor: pointer;
+}
+
+#topic-form{
+    background-color: black;
+    outline: 1px solid white;
+    border-radius: 10px;
+}
+
+#topic-title{
+    background-color: black;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 20px;
+    line-height: 20px;
+    height: 40px;
+    padding: 0 5px;
+    flex: 1;
+}
+
+#add-topic-form-button{
+    border: none;
+    font-size: 20px;
+    height: 40px;
+    width: 50px;
+    box-sizing: border-box;
+    background-color: rgb(0, 200, 200);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+}
+
+#section-form{
+    width: 600px;
+    height: 600px;
+    flex-direction: column;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+#section-form input, textarea, button{
+    width:500px;
+    background-color: black;
+    font-size: 20px;
+    line-height: 20px;
+    border: none;
+}
+
+#section-form input, textarea{
+    border-radius: 10px;
+    outline: 1px solid white;
+    box-sizing: border-box;
+}
+
+#section-form input{
+    height:30px;
+    padding: 0 5px;
+    margin-top: 10px;
+}
+
+#section-form textarea{
+    height:70%;
+    resize: none;
+    margin: 20px 0;
+    padding: 5px;
+}
+
+#section-form button{
+    line-height: 20px;
+    padding: 10px;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: rgb(0, 200, 200);   
+    color: white;
+    box-sizing: border-box;
+}
+
+.hidden{
+    display: none;
+}
+
+.visible{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-height: 420px) or (max-width: 420px){
+    .add-button{
+        right: 25px;
+        bottom: 25px;
+    }
+}
+
+@media (max-width: 600px){
+    #section-form{
+        width:90%;
+    }
+    
+    #section-form input, textarea, button{
+        width:90%;
+    }
+}
+
+@media (max-height: 600px){
+    #section-form{
+        height:90%;
+    }
+}
+
+@media (max-width: 600px){
+    #topic-form{
+        width:90%;
+    }
+}
+
+@media (max-width: 500px){
+    #topics-container{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 501px){
+    #topics-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 901px){
+    #topics-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1501px){
+    #topics-container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 2001px){
+    #topics-container{
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (min-width: 601px){
+    #topic-form{
+        width: 50%;
+    }
+}
+
+@media (min-width: 601px) and (min-height: 301px){
+    #topic-title, #add-topic-form-button{
+        height: 50px;
+    }
+}
